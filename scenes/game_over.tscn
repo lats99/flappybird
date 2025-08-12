@@ -1,0 +1,37 @@
+[gd_scene load_steps=7 format=3 uid="uid://dkmi3bpqj7ggm"]
+
+[ext_resource type="Script" uid="uid://cyshqmdd1cg6h" path="res://scenes/game_over.gd" id="1_wqhvx"]
+[ext_resource type="FontFile" uid="uid://bhcttqo7gtic3" path="res://assets/pixel_font.ttf" id="2_racf3"]
+[ext_resource type="Texture2D" uid="uid://c57fej47adq38" path="res://assets/restart.png" id="2_tbwuq"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_racf3"]
+texture = ExtResource("2_tbwuq")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7m3ot"]
+texture = ExtResource("2_tbwuq")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_v3hpu"]
+texture = ExtResource("2_tbwuq")
+
+[node name="GameOver" type="CanvasLayer"]
+script = ExtResource("1_wqhvx")
+
+[node name="GameOverLabel" type="Label" parent="."]
+offset_left = 245.0
+offset_top = 350.0
+offset_right = 605.0
+offset_bottom = 390.0
+theme_override_fonts/font = ExtResource("2_racf3")
+theme_override_font_sizes/font_size = 40
+text = "Game Over"
+
+[node name="RestartButton" type="Button" parent="."]
+offset_left = 342.0
+offset_top = 450.0
+offset_right = 502.0
+offset_bottom = 513.0
+theme_override_styles/hover = SubResource("StyleBoxTexture_racf3")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_7m3ot")
+theme_override_styles/normal = SubResource("StyleBoxTexture_v3hpu")
+
+[connection signal="pressed" from="RestartButton" to="." method="_on_restart_button_pressed"]
