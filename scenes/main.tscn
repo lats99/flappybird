@@ -41,6 +41,26 @@ text = "0"
 
 [node name="GameOver" parent="." instance=ExtResource("7_o6xl0")]
 
+[node name="StartLayer" type="CanvasLayer" parent="."]
+
+[node name="FlappyBirdTitle" type="Label" parent="StartLayer"]
+offset_left = 141.0
+offset_top = 236.0
+offset_right = 691.0
+offset_bottom = 286.0
+theme_override_fonts/font = ExtResource("6_tefeu")
+theme_override_font_sizes/font_size = 50
+text = "Flappy Bird"
+
+[node name="PressLable" type="Label" parent="StartLayer"]
+offset_left = 99.0
+offset_top = 563.0
+offset_right = 761.0
+offset_bottom = 613.0
+theme_override_fonts/font = ExtResource("6_tefeu")
+theme_override_font_sizes/font_size = 30
+text = "Click anything to play"
+
 [connection signal="hit" from="Ground" to="." method="_on_ground_hit"]
 [connection signal="timeout" from="PipeTimer" to="." method="_on_pipe_timer_timeout"]
 [connection signal="restart" from="GameOver" to="." method="_on_game_over_restart"]

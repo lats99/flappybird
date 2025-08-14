@@ -2,6 +2,7 @@ extends Node2D
 
 @export var pipe_scene : PackedScene
 
+
 var game_running : bool
 var game_over : bool
 var scroll
@@ -26,8 +27,10 @@ func new_game():
 	score = 0
 	scroll = 0
 	$GameOver.hide()
+	$StartLayer.show()
 	get_tree().call_group("pipes","queue_free")
 	$ScoreLabel.text = str(score)
+	$ScoreLabel.hide()
 	pipes.clear()
 	generate_pipes()
 	$Bird.reset()
@@ -42,7 +45,8 @@ func _input(event: InputEvent) -> void:
 					if $Bird.flying:
 						$Bird.flap()
 						check_top()
-						
+				$StartLayer.hide()
+				$ScoreLabel.show()
 func start_game():
 	game_running = true
 	$Bird.flying = true
