@@ -59,7 +59,7 @@ offset_right = 761.0
 offset_bottom = 613.0
 theme_override_fonts/font = ExtResource("6_tefeu")
 theme_override_font_sizes/font_size = 30
-text = "Click anything to play"
+text = "Click anywhere to play"
 
 [connection signal="hit" from="Ground" to="." method="_on_ground_hit"]
 [connection signal="timeout" from="PipeTimer" to="." method="_on_pipe_timer_timeout"]
