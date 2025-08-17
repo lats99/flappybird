@@ -63,6 +63,11 @@ func _process(delta: float) -> void:
 			scroll = 0
 		# Move ground node
 		$Ground.position.x = -scroll
+		# Move Background
+		$ParallaxBackground.scroll_offset.x -= SCROlL_SPEED
+		#$ParallaxBackground/Clouds.position.x = -scroll/50
+		#$ParallaxBackground/Buildings.position.x = -scroll/25
+		#$ParallaxBackground/Bush.position.x = -scroll/10
 		for pipe in pipes:
 			pipe.position.x -= SCROlL_SPEED
 
